@@ -46,6 +46,7 @@ while playing:
                 nombre_choisi = random.randint(borne_minimal, borne_maximal)
                 nombre_essaie = 0
             else:
+                print("Merci et au revoir…")
                 playing = False
 
     except ValueError:
