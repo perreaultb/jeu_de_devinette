@@ -1,5 +1,5 @@
 """
-jeu de devinnette (a finir)
+jeu de devinnette 
 par Bradley Perreault
 groupe 4567
 """
@@ -34,16 +34,19 @@ def verifier_nombre(nombre : int) -> str:
         return f"Félicitations! Vous avez trouvé le bon nombre en {nombre_essaie} essais."
 
 #main loop
-
+  
 while playing:
     try:
         nombre_joueur : int = int(input(f"Devinez le nombre entre {borne_minimal} et {borne_maximal}: "))
         print(verifier_nombre(nombre_joueur))
 
         if nombre_joueur == nombre_choisi:
-            playing = False
+            veut_jouer_encore = input("Voulez-vous jouer encore? (o/n): ").lower()
+            if veut_jouer_encore == "o":
+                nombre_choisi = random.randint(borne_minimal, borne_maximal)
+                nombre_essaie = 0
+            else:
+                playing = False
 
     except ValueError:
         print("Veuillez entrer un nombre valide.")
-
-
